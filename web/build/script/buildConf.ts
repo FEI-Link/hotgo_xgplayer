@@ -2,7 +2,7 @@
  * Generate additional configuration files when used for packaging. The file can be configured with some global variables, so that it can be changed directly externally without repackaging
  */
 import { GLOB_CONFIG_FILE_NAME, OUTPUT_DIR } from '../constant';
-import fs, { writeFileSync } from 'fs-extra';
+import fs from 'fs-extra';
 import chalk from 'chalk';
 
 import { getRootPath, getEnvConfig } from '../utils';
@@ -10,7 +10,7 @@ import { getConfigFileName } from '../getConfigFileName';
 
 import pkg from '../../package.json';
 
-function createConfig(
+async function createConfig(
   {
     configName,
     config,
@@ -27,8 +27,8 @@ function createConfig(
         writable: false,
       });
     `.replace(/\s/g, '');
-    fs.mkdirp(getRootPath(OUTPUT_DIR));
-    writeFileSync(getRootPath(`${OUTPUT_DIR}/${configFileName}`), configStr);
+    await fs.mkdirp(getRootPath(OUTPUT_DIR));
+    fs.writeFileSync(getRootPath(`${OUTPUT_DIR}/${configFileName}`), configStr);
 
     console.log(chalk.cyan(`✨ [${pkg.name}]`) + ` - configuration file is build successfully:`);
     console.log(chalk.gray(OUTPUT_DIR + '/' + chalk.green(configFileName)) + '\n');
@@ -37,8 +37,8 @@ function createConfig(
   }
 }
 
-export function runBuildConfig() {
+export async function runBuildConfig() {
   const config = getEnvConfig();
   const configFileName = getConfigFileName(config);
-  createConfig({ config, configName: configFileName });
+  await createConfig({ config, configName: configFileName });
 }
