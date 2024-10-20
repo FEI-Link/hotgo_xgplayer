@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 网络测试 -->
     <div class="n-layout-page-header">
       <n-card :bordered="false" title="关于">
         {{ name }} 是一个基于 goframe2，vue3，vite2，TypeScript，uniapp
