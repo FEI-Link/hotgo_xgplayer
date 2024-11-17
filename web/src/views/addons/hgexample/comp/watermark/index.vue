@@ -156,7 +156,7 @@
 </template>
 <script lang="ts">
   import { defineComponent, reactive } from 'vue';
-  import logo from '@/assets/images/logo.png';
+  import logo from '@/assets/images/logo.jpg';
   export default defineComponent({
     setup() {
       const compData = reactive({

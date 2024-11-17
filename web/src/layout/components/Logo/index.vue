@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <img src="~@/assets/images/logo.png" alt="" :class="{ 'mr-2': !collapsed }" />
+    <img src="~@/assets/images/logo.jpg" alt="" :class="{ 'mr-2': !collapsed }" />
     <h2 v-show="!collapsed" class="title">{{ projectName }}</h2>
   </div>
 </template>

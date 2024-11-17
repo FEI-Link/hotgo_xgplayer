@@ -6,7 +6,7 @@
       v-if="navMode === 'horizontal' || (navMode === 'horizontal-mix' && mixMenu)"
     >
       <div class="logo" v-if="navMode === 'horizontal'">
-        <img src="~@/assets/images/logo.png" alt="" />
+        <img src="~@/assets/images/logo.jpg" alt="" />
         <h2 v-show="!collapsed" class="title">{{ projectName }}</h2>
       </div>
       <AsideMenu
@@ -356,13 +356,13 @@
         //   icon: 'SearchOutlined',
         //   tips: '搜索',
         // },
-        {
-          icon: 'GithubOutlined',
-          tips: 'github',
-          eventObject: {
-            click: () => window.open('https://github.com/bufanyun/hotgo'),
-          },
-        },
+        // {
+        //   icon: 'GithubOutlined',
+        //   tips: 'github',
+        //   eventObject: {
+        //     click: () => window.open('https://github.com/bufanyun/hotgo'),
+        //   },
+        // },
         {
           icon: 'BellOutlined',
           tips: '我的消息',

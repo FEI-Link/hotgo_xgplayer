@@ -43,7 +43,7 @@
 
 <script lang="ts">
   import printJS from 'print-js';
-  import imagePath from '@/assets/images/logo.png';
+  import imagePath from '@/assets/images/logo.jpg';
   import { defineComponent } from 'vue';
   export default defineComponent({
     name: 'Print',
