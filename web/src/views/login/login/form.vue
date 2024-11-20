@@ -65,7 +65,7 @@
       </n-form-item>
     </template>
 
-    <template v-if="mode === 'mobile'">
+    <!-- <template v-if="mode === 'mobile'">
       <n-form-item path="mobile">
         <n-input
           @keyup.enter="handleMobileSubmit"
@@ -102,7 +102,7 @@
           </n-button>
         </n-input-group>
       </n-form-item>
-    </template>
+    </template> -->
 
     <n-space :vertical="true" :size="24">
       <div class="flex-y-center justify-between">
@@ -132,7 +132,7 @@
   import { SafetyCertificateOutlined, MobileOutlined } from '@vicons/antd';
   import { GetCaptcha } from '@/api/base';
   import { aesEcb } from '@/utils/encrypt';
-  import DemoAccount from './demo-account.vue';
+  // import DemoAccount from './demo-account.vue';
   import FormOther from '../components/form-other.vue';
   import { useSendCode } from '@/hooks/common';
   import { SendSms } from '@/api/system/user';
