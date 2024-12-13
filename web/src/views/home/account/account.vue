@@ -1,7 +1,7 @@
 <template>
   <!-- 提交测试 -->
   <div>
-    <n-grid cols="24 300:1 600:24" :x-gap="24">
+    <n-grid cols="24 300:1 600:24" :x-gap="12">
       <n-grid-item span="6">
         <n-card :bordered="false" class="proCard">
           <n-thing
@@ -34,6 +34,7 @@
   import CashSetting from './CashSetting.vue';
   import ThirdBind from './ThirdBind.vue';
   import { useRouter } from 'vue-router';
+  import {pushHashRouterParameter} from "@/utils/urlUtils";
 
   const router = useRouter();
   const type = ref(1);
@@ -82,6 +83,7 @@
   function switchType(e) {
     type.value = e.key;
     typeTitle.value = e.name;
+    pushHashRouterParameter(window.location.href, 'type', e.key);
   }
 </script>
 <style lang="less" scoped>
